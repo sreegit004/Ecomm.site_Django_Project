@@ -1,24 +1,23 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}ADORA{% endblock %}</title>
+    <title>ADORA</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Your custom styles -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <!-- Brand -->
-            <a class="navbar-brand" href="{% url 'home' %}">ADORA</a>
+            <a class="navbar-brand" href="#">ADORA</a>
 
             <!-- Toggler -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -29,33 +28,28 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
+                        <a class="nav-link" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about' %}">Collections</a>
+                        <a class="nav-link" href="#">Collections</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'about_us' %}">About Us</a>
+                        <a class="nav-link" href="#">About Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+                        <a class="nav-link" href="#">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'products' %}">Products</a>
+                        <a class="nav-link" href="#">Products</a>
                     </li>
                 </ul>
 
                 <div class="d-flex align-items-center">
-                    <a href="{% url 'cart' %}" class="btn btn-outline-light me-2">
+                    <a href="#" class="btn btn-outline-light me-2">
                         Cart <span class="badge bg-danger">0</span>
                     </a>
 
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'profile' %}" class="btn btn-outline-light me-2">Profile</a>
-                        <a href="{% url 'logout' %}" class="btn btn-outline-light">Logout</a>
-                    {% else %}
-                        <a href="{% url 'login' %}" class="btn btn-outline-light">Login</a>
-                    {% endif %}
+                    <a href="#" class="btn btn-outline-light">Login</a>
                 </div>
             </div>
         </div>
@@ -63,16 +57,10 @@
 
     <!-- Main content area -->
     <main class="container my-4">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-
-        {% block content %}
-        {% endblock %}
+        <h1 class="mb-4">Welcome to ADORA</h1>
+        <p class="lead">
+            Explore our curated fashion collections and discover your new style.
+        </p>
     </main>
 
     <!-- Footer -->
@@ -89,7 +77,6 @@
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'js/main.js' %}"></script>
-    {% block extra_js %}{% endblock %}
+    <script src="script.js"></script>
 </body>
 </html>
