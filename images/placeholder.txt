@@ -1,0 +1,5 @@
+This folder contains images for the portfolio website.
+You can add your own images here or use placeholder images from services like:
+- https://via.placeholder.com/
+- https://picsum.photos/
+- https://unsplash.com/
